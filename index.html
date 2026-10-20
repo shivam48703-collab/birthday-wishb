@@ -1,0 +1,1683 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#e9f5ff">
+<meta name="description" content="A little surprise for Simran's birthday - from Shivam.">
+<title>Happy Birthday, Simran 💙</title>
+<style>
+/* ================= BASE ================= */
+:root{
+  --blue:#3f8ee0; --blue-deep:#1f66b8; --blue-dark:#124a8c;
+  --blue-soft:#e8f4ff; --blue-mid:#bfe0ff; --blue-pale:#f5fbff;
+  --pink:#ff8fb1; --pink-soft:#ffe3ec;
+  --text:#2b4a6f; --muted:#6f92b8;
+  --shadow:0 12px 30px rgba(63,142,224,.18);
+  --radius:22px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Segoe UI",system-ui,-apple-system,"Noto Sans Devanagari","Nirmala UI",Arial,sans-serif;
+  color:var(--text); line-height:1.72; overflow-x:hidden;
+  background:linear-gradient(165deg,#f8fdff 0%,#e9f5ff 42%,#ffffff 100%);
+  min-height:100vh;
+}
+button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit}
+h1,h2,h3{line-height:1.25}
+::selection{background:var(--blue-mid)}
+
+/* ================= NAV ================= */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;gap:6px;align-items:center;
+  padding:8px 10px;overflow-x:auto;scrollbar-width:none;background:rgba(255,255,255,.86);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--blue-mid)}
+nav::-webkit-scrollbar{display:none}
+.navlink{white-space:nowrap;font-size:12.5px;font-weight:700;color:var(--blue-deep);padding:7px 12px;
+  border-radius:999px;background:var(--blue-soft);border:1px solid var(--blue-mid);transition:.25s;flex:0 0 auto}
+.navlink:hover{background:#fff;transform:translateY(-2px)}
+.navlink.active{background:linear-gradient(135deg,var(--blue),var(--blue-deep));color:#fff;
+  border-color:transparent;box-shadow:var(--shadow)}
+
+/* ================= PAGES ================= */
+.page{display:none;max-width:1040px;margin:0 auto;padding:94px 18px 124px;position:relative;z-index:1}
+.page.active{display:block;animation:pageIn .6s cubic-bezier(.2,.8,.3,1)}
+@keyframes pageIn{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.title{text-align:center;font-size:clamp(23px,5.2vw,40px);color:var(--blue-deep);font-weight:800}
+.title .em{color:var(--pink)}
+.sub{text-align:center;color:var(--muted);font-size:15px;margin:8px auto 26px;max-width:660px}
+.card{background:rgba(255,255,255,.92);border:1px solid var(--blue-mid);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:22px;position:relative}
+.center{text-align:center}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:14px 26px;border-radius:999px;font-size:16px;
+  font-weight:800;color:#fff;background:linear-gradient(135deg,var(--blue),var(--blue-deep));
+  box-shadow:0 10px 22px rgba(63,142,224,.35);transition:.25s;text-decoration:none}
+.btn:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 16px 30px rgba(63,142,224,.45)}
+.btn:active{transform:scale(.97)}
+.btn.ghost{background:#fff;color:var(--blue-deep);border:1.5px solid var(--blue-mid);box-shadow:0 6px 16px rgba(63,142,224,.15)}
+.btn.pink{background:linear-gradient(135deg,#ff9dbb,#ff6f9c);box-shadow:0 10px 22px rgba(255,120,160,.35)}
+.btn.small{padding:10px 18px;font-size:14px}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none!important;box-shadow:none}
+.result{margin-top:16px;padding:14px;border-radius:16px;background:var(--blue-soft);border:1px dashed var(--blue);
+  text-align:center;font-weight:700;color:var(--blue-deep);display:none}
+.result.show{display:block;animation:pageIn .4s}
+.toast{position:fixed;left:50%;bottom:88px;transform:translate(-50%,20px);z-index:970;
+  background:rgba(31,102,184,.95);color:#fff;font-weight:700;font-size:14px;padding:12px 20px;
+  border-radius:999px;opacity:0;transition:.35s;pointer-events:none;max-width:86vw;text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* ================= FLOATING HEARTS ================= */
+#floatLayer{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.fh{position:absolute;bottom:-40px;font-size:16px;animation:floatUp linear forwards}
+@keyframes floatUp{
+  0%{transform:translateY(0) rotate(0);opacity:0}
+  12%{opacity:.75}
+  100%{transform:translateY(-108vh) rotate(28deg);opacity:0}
+}
+.pop-heart{position:absolute;pointer-events:none;font-size:20px;animation:popFly 1.3s ease-out forwards;z-index:6}
+@keyframes popFly{
+  0%{opacity:1;transform:translate(0,0) scale(.5)}
+  100%{opacity:0;transform:translate(var(--dx,0),-92px) scale(1.3)}
+}
+
+/* ================= HOME / CAKE ================= */
+.hero-cake{max-width:430px;margin:4px auto 0}
+.cake-svg{width:100%;height:auto;filter:drop-shadow(0 20px 30px rgba(63,142,224,.22))}
+.flame{transform-origin:50% 100%;animation:flick .2s ease-in-out infinite alternate}
+@keyframes flick{from{transform:scale(1)}to{transform:scale(1.14) translateY(-1.5px)}}
+.twinkle{animation:tw 2.4s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.3;transform:scale(.8)}50%{opacity:1;transform:scale(1.12)}}
+.countdown{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:18px 0 4px}
+.cd-box{min-width:80px;padding:14px 10px;border-radius:18px;background:rgba(255,255,255,.94);
+  border:1.5px solid var(--blue-mid);box-shadow:var(--shadow);text-align:center}
+.cd-num{font-size:clamp(26px,6vw,40px);font-weight:800;color:var(--blue-deep);
+  font-variant-numeric:tabular-nums;line-height:1.1}
+.cd-lbl{font-size:10.5px;letter-spacing:1.8px;text-transform:uppercase;color:var(--muted);font-weight:800}
+.cd-done{text-align:center;font-size:clamp(18px,4.4vw,28px);font-weight:900;color:var(--pink);
+  margin-top:12px;display:none}
+.cd-done.show{display:block;animation:pageIn .5s}
+
+/* ================= CAKE + CANDLES (section 2) ================= */
+.cake2{position:relative;width:300px;height:300px;margin:0 auto}
+.cake2 .plate{position:absolute;left:0;right:0;bottom:6px;height:30px;border-radius:50%;
+  background:linear-gradient(#f2f9ff,#cfe4fa);box-shadow:0 14px 26px rgba(63,142,224,.25)}
+.cake2 .tier{position:absolute;left:50%;transform:translateX(-50%);border-radius:12px;
+  border:2px solid #fff;box-shadow:0 12px 20px rgba(63,142,224,.2)}
+.cake2 .t1{width:264px;height:72px;bottom:26px;background-image:repeating-linear-gradient(90deg,#fff 0 18px,#dcefff 18px 36px)}
+.cake2 .t2{width:206px;height:60px;bottom:96px;background-image:repeating-linear-gradient(90deg,#dcefff 0 16px,#fff 16px 32px)}
+.cake2 .t3{width:150px;height:50px;bottom:154px;background-image:repeating-linear-gradient(90deg,#fff 0 14px,#dcefff 14px 28px)}
+.cake2 .drip{position:absolute;left:50%;transform:translateX(-50%);height:18px;
+  background-image:radial-gradient(circle at 9px 0,#fff 9px,rgba(255,255,255,0) 9.6px);
+  background-size:18px 18px;background-repeat:repeat-x}
+.cake2 .d1{width:264px;bottom:80px}
+.cake2 .d2{width:206px;bottom:140px}
+.cake2 .d3{width:150px;bottom:188px}
+#candleRow{position:absolute;left:50%;transform:translateX(-50%);bottom:196px;width:150px;
+  display:flex;justify-content:space-between}
+.candle{position:relative;width:12px;height:52px;border-radius:6px;
+  background:repeating-linear-gradient(45deg,#7fbcf0 0 6px,#fff 6px 12px);
+  box-shadow:0 2px 6px rgba(63,142,224,.35)}
+.candle .wick{position:absolute;left:50%;top:-8px;width:2px;height:8px;background:#8b98a6;
+  border-radius:1px;transform:translateX(-50%)}
+.candle .flame{position:absolute;left:50%;top:-30px;width:15px;height:24px;border-radius:50% 50% 46% 46%;
+  transform:translateX(-50%);
+  background:radial-gradient(circle at 50% 72%,#fff8cf,#ffd166 45%,#ff9a3c 75%,rgba(255,140,60,.25) 100%);
+  box-shadow:0 0 24px 9px rgba(255,186,90,.45);transition:.35s;animation:flick .22s ease-in-out infinite alternate}
+.candle.out .flame{opacity:0;animation:none;transform:translateX(-50%) scale(.15) translateY(-14px)}
+.candle .pufffx{position:absolute;left:50%;top:-28px;transform:translateX(-50%);font-size:15px;opacity:0;pointer-events:none}
+.candle.out .pufffx{animation:puffUp 1.1s ease-out forwards}
+@keyframes puffUp{
+  0%{opacity:.95;transform:translate(-50%,6px) scale(.8)}
+  100%{opacity:0;transform:translate(-50%,-32px) scale(1.4)}
+}
+.meter{width:min(360px,92%);height:14px;border-radius:999px;background:#dcefff;overflow:hidden;
+  margin:18px auto 6px;border:1px solid var(--blue-mid)}
+.meter i{display:block;height:100%;width:0%;background:linear-gradient(90deg,#9fd0ff,var(--blue));transition:width .08s linear}
+
+/* ================= TEDDY WORLD ================= */
+.teddy-row{display:flex;gap:18px;flex-wrap:wrap;justify-content:center}
+.teddy-card{position:relative;background:#fff;border:1px solid var(--blue-mid);border-radius:24px;
+  padding:18px 16px;text-align:center;box-shadow:var(--shadow);flex:1 1 240px;max-width:300px;
+  transition:.3s;overflow:hidden;cursor:pointer}
+.teddy-card:hover{transform:translateY(-7px) rotate(-1deg);box-shadow:0 20px 36px rgba(63,142,224,.26)}
+.teddy{width:126px;height:auto;margin:0 auto 6px;display:block;animation:bob 3.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.teddy-card h3{font-size:15.5px;color:var(--blue-deep);margin-bottom:6px}
+.teddy-card p{font-size:14.5px;color:#456b90}
+.fur-a{fill:#cfe6ff}.fur-b{fill:#a9d3f7}.muzzle{fill:#fff6ef}.ear-in{fill:#ffd7e3}
+.eye{fill:#2b4a6f}.nose{fill:#7c5c46}.hold-heart{fill:#ff7fa8}
+.t-white .fur-a{fill:#fdfeff}.t-white .fur-b{fill:#dcefff}.t-white .muzzle{fill:#eef7ff}
+.t-soft .fur-a{fill:#e3f2ff}.t-soft .fur-b{fill:#bfe0ff}.t-soft .muzzle{fill:#fff9f4}
+.t-pink .fur-a{fill:#ffe6ee}.t-pink .fur-b{fill:#ffc9dc}.t-pink .muzzle{fill:#fff8fb}
+
+/* ================= GAMES ================= */
+.gtabs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:18px}
+.gtab{padding:10px 16px;border-radius:999px;background:#fff;border:1.5px solid var(--blue-mid);
+  font-weight:800;font-size:13.5px;color:var(--blue-deep);transition:.25s}
+.gtab.active{background:linear-gradient(135deg,var(--blue),var(--blue-deep));color:#fff;border-color:transparent}
+.gtab.locked{opacity:.55;cursor:not-allowed}
+.ggame{display:none}
+.ggame.active{display:block;animation:pageIn .45s}
+.ghead{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.gstat{font-weight:800;color:var(--blue-deep);font-size:13.5px;background:var(--blue-soft);
+  padding:8px 14px;border-radius:999px;border:1px solid var(--blue-mid)}
+.arena{position:relative;height:400px;border-radius:20px;overflow:hidden;border:1.5px solid var(--blue-mid);
+  background:linear-gradient(180deg,#f4fbff,#dcefff);touch-action:none;-webkit-user-select:none;user-select:none}
+.arena .hint{position:absolute;left:0;right:0;bottom:10px;text-align:center;font-size:12.5px;
+  color:var(--muted);pointer-events:none}
+.balloon-target{position:absolute;bottom:-90px;width:48px;height:62px;cursor:pointer;
+  border-radius:50% 50% 46% 46%;box-shadow:inset -6px -8px 0 rgba(0,0,0,.06)}
+.balloon-target::after{content:"";position:absolute;left:50%;top:100%;width:2px;height:42px;
+  background:rgba(63,142,224,.45);transform:translateX(-50%)}
+@keyframes riseArena{from{transform:translateY(0)}to{transform:translateY(-600px)}}
+.gheart{position:absolute;width:30px;height:30px;font-size:26px;line-height:30px;text-align:center;
+  color:var(--pink);filter:drop-shadow(0 3px 7px rgba(255,120,160,.45))}
+.basket{position:absolute;bottom:8px;left:0;width:96px;height:56px;border-radius:14px 14px 24px 24px;
+  background:linear-gradient(180deg,#eaf4ff,#a9d3f7);border:2px solid #fff;
+  box-shadow:0 10px 20px rgba(63,142,224,.3)}
+.basket::after{content:"🧺";position:absolute;inset:0;display:grid;place-items:center;font-size:26px}
+.hgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;max-width:440px;margin:0 auto}
+.hcell{aspect-ratio:1/1;border-radius:14px;background:linear-gradient(135deg,#fff,#e3f1ff);
+  border:1.5px solid var(--blue-mid);display:grid;place-items:center;font-size:22px;transition:.2s;color:var(--blue)}
+.hcell:hover{transform:translateY(-3px)}
+.hcell.open{cursor:default}
+.hcell.heart{background:#fff0f5;border-color:var(--pink);animation:popIn .35s}
+@keyframes popIn{from{transform:scale(.4)}to{transform:scale(1)}}
+.quiz-q{font-size:17px;font-weight:800;margin-bottom:14px;color:var(--blue-deep)}
+.quiz-opt{display:block;width:100%;text-align:left;padding:13px 16px;margin-bottom:10px;border-radius:14px;
+  background:#fff;border:1.5px solid var(--blue-mid);font-size:15px;transition:.2s}
+.quiz-opt:hover{border-color:var(--blue);background:var(--blue-soft)}
+.quiz-opt.right{background:#e6f8ee;border-color:#5fc98f}
+.quiz-opt.wrong{background:#ffeef2;border-color:#ff8fb1}
+.qbar{height:9px;border-radius:999px;background:#e3f1ff;overflow:hidden;margin-bottom:16px}
+.qbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#9fd0ff,var(--blue));transition:.35s}
+
+/* ================= GIFTS ================= */
+.gifts{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
+.gift{position:relative;padding:18px;border-radius:24px;text-align:center;background:rgba(255,255,255,.94);
+  border:1px solid var(--blue-mid);box-shadow:var(--shadow);transition:.3s;overflow:hidden}
+.gift:hover{transform:translateY(-5px)}
+.gift .box{position:relative;width:150px;height:136px;margin:6px auto 12px;cursor:pointer}
+.gift .body{position:absolute;left:8px;bottom:0;width:134px;height:92px;border-radius:12px;
+  background:linear-gradient(180deg,#e6f3ff,#cfe6ff);border:2px solid #fff;
+  box-shadow:0 10px 18px rgba(63,142,224,.22)}
+.gift .ribbon{position:absolute;left:50%;top:0;transform:translateX(-50%);width:18px;height:100%;
+  background:linear-gradient(#ffb3c9,#ff8fb1)}
+.gift .lid{position:absolute;left:0;top:0;width:150px;height:46px;border-radius:14px;
+  background:linear-gradient(135deg,#bfe0ff,#7fbcf0);border:2px solid #fff;
+  box-shadow:0 8px 16px rgba(63,142,224,.28);transition:.7s cubic-bezier(.2,.9,.3,1.4);z-index:2}
+.gift .bow{position:absolute;left:50%;top:-22px;transform:translateX(-50%);font-size:26px}
+.gift.open .lid{transform:translateY(-54px) rotate(-15deg)}
+.gift .msg{max-height:0;overflow:hidden;opacity:0;transition:.6s;font-size:14.5px;color:#456b90}
+.gift.open .msg{max-height:280px;opacity:1;margin-top:10px}
+.gift .msg b{display:block;color:var(--blue-deep);font-size:15.5px;margin-bottom:4px}
+
+/* ================= JOURNEY ================= */
+.journey{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.jcard{background:#fff;border:1px solid var(--blue-mid);border-radius:22px;overflow:hidden;
+  box-shadow:var(--shadow);transition:.3s}
+.jcard:hover{transform:translateY(-7px);box-shadow:0 22px 40px rgba(63,142,224,.26)}
+.jphoto{position:relative;aspect-ratio:4/3;background:linear-gradient(135deg,#eef7ff,#dcefff);
+  display:grid;place-items:center;overflow:hidden}
+.jphoto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.jphoto .ph{text-align:center;color:var(--blue-deep);font-size:12.5px;padding:14px;line-height:1.5}
+.jphoto .ph b{display:block;font-size:26px;margin-bottom:6px}
+.jphoto .num{position:absolute;top:10px;left:10px;background:rgba(255,255,255,.94);color:var(--blue-deep);
+  font-weight:800;font-size:12px;padding:4px 11px;border-radius:999px;border:1px solid var(--blue-mid);z-index:2}
+.jcap{padding:14px 15px}
+.jcap .mem{font-size:14.5px;color:#456b90;outline:none;border-bottom:1px dashed transparent;display:block}
+.jcap .mem:hover{border-bottom-color:var(--blue-mid)}
+.jcap .mem:focus{border-bottom-color:var(--blue)}
+.edit-hint{font-size:12px;color:var(--muted);margin-top:12px;text-align:center}
+
+/* ================= LETTER ================= */
+.letter{max-width:740px;margin:0 auto;padding:32px 26px;border-radius:26px;position:relative;
+  background:repeating-linear-gradient(180deg,#fffdfb 0 31px,#f4faff 31px 32px);
+  border:1px solid var(--blue-mid);box-shadow:var(--shadow)}
+.letter::before{content:"💙";position:absolute;right:18px;top:12px;font-size:24px}
+.letter p{margin-bottom:16px;font-size:17px}
+.letter .salut{font-size:22px;font-weight:800;color:var(--blue-deep);margin-bottom:14px}
+.letter .sign{font-size:18.5px;font-weight:800;color:var(--pink);text-align:right;margin-top:8px}
+
+/* ================= TEDDY SURPRISE ================= */
+.stage{position:relative;height:470px;border-radius:26px;overflow:hidden;border:1.5px solid var(--blue-mid);
+  background:radial-gradient(circle at 50% 72%,#ffffff,#e6f3ff 70%,#d9ecff)}
+.sbox{position:absolute;left:50%;bottom:92px;transform:translateX(-50%);width:190px;height:158px;
+  cursor:pointer;z-index:4}
+.sbox .sbody{position:absolute;left:0;bottom:0;width:190px;height:104px;border-radius:14px;
+  background:linear-gradient(180deg,#e6f3ff,#bcdcfa);border:3px solid #fff;
+  box-shadow:0 18px 30px rgba(63,142,224,.32)}
+.sbox .slid{position:absolute;left:-6px;bottom:100px;width:202px;height:54px;border-radius:14px;
+  background:linear-gradient(135deg,#bfe0ff,#7fbcf0);border:3px solid #fff;
+  box-shadow:0 8px 18px rgba(63,142,224,.3);transition:.85s cubic-bezier(.2,.9,.3,1.5)}
+.sbox.open .slid{transform:translateY(-98px) rotate(-17deg)}
+.sbox .sbow{position:absolute;left:50%;top:-30px;transform:translateX(-50%);font-size:30px;z-index:2}
+.sbox .sribbon{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:24px;height:104px;
+  background:linear-gradient(#ffb3c9,#ff8fb1)}
+.sbox.hide{opacity:0;transform:translateX(-50%) scale(.85);transition:.6s}
+.steddy{position:absolute;bottom:-200px;width:126px;z-index:3;
+  transition:bottom 1.15s cubic-bezier(.2,.9,.3,1.25),transform 1s ease}
+.steddy.up{bottom:66px}
+#teddyB{transform-origin:82% 92%}
+#teddyB.lean{transform:translateX(-34px) rotate(-11deg)}
+.big-love{position:absolute;left:50%;top:34px;transform:translate(-50%,-14px);opacity:0;transition:.8s;
+  font-size:clamp(19px,4.6vw,34px);font-weight:900;color:var(--pink);white-space:nowrap;
+  pointer-events:none;text-shadow:0 6px 18px rgba(255,140,175,.45)}
+.big-love.show{opacity:1;transform:translate(-50%,0);animation:lovePulse 1.8s ease-in-out infinite}
+@keyframes lovePulse{
+  0%,100%{transform:translate(-50%,0) scale(1)}
+  50%{transform:translate(-50%,0) scale(1.06)}
+}
+
+/* ================= PROMISES ================= */
+.pstage{position:relative;min-height:540px;border-radius:26px;overflow:hidden;border:1.5px solid var(--blue-mid);
+  background:linear-gradient(180deg,#fbfeff,#e8f4ff);display:grid;place-items:center;padding:26px}
+.pheart{width:160px;height:150px;cursor:pointer;animation:beat 1.7s ease-in-out infinite;
+  filter:drop-shadow(0 16px 26px rgba(255,110,150,.4));display:block;background:none;border:0}
+@keyframes beat{0%,100%{transform:scale(1)}45%{transform:scale(1.09)}}
+.plist{position:absolute;inset:0;display:grid;place-items:center;padding:28px;pointer-events:none}
+.promise{max-width:580px;background:rgba(255,255,255,.96);border:1.5px solid var(--blue-mid);
+  border-radius:20px;padding:20px 24px;box-shadow:var(--shadow);font-size:16.5px;font-weight:600;
+  color:var(--blue-deep);opacity:0;transform:translateY(18px) scale(.96);transition:.5s;text-align:center}
+.promise.show{opacity:1;transform:none}
+.pcount{position:absolute;top:14px;right:18px;font-size:13px;font-weight:800;color:var(--blue-deep);
+  background:rgba(255,255,255,.92);border:1px solid var(--blue-mid);padding:5px 13px;border-radius:999px}
+.pfinal{max-width:700px;margin:26px auto 0;text-align:center;font-size:clamp(17px,4vw,26px);
+  font-weight:900;color:var(--pink);opacity:0;transform:translateY(14px);transition:.9s}
+.pfinal.show{opacity:1;transform:none}
+
+/* ================= FINAL ================= */
+.fwrap{min-height:74vh;display:grid;place-items:center;text-align:center;gap:20px;align-content:center}
+.ftitle{font-size:clamp(24px,6.6vw,58px);font-weight:900;color:var(--blue-deep);line-height:1.18;
+  text-shadow:0 10px 26px rgba(63,142,224,.22)}
+.fsub{font-size:clamp(15px,3.6vw,24px);font-weight:800;color:var(--pink)}
+.fstage{position:relative;width:min(560px,94vw);height:300px;border-radius:26px;overflow:hidden;
+  border:1.5px solid var(--blue-mid);background:radial-gradient(circle at 50% 80%,#ffffff,#e8f4ff)}
+.fstage .balloon2{position:absolute;bottom:-90px;width:52px;height:66px;
+  border-radius:50% 50% 46% 46%;box-shadow:inset -6px -8px 0 rgba(0,0,0,.06);
+  animation:riseArena 7s linear infinite}
+.fstage .fscake{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);width:210px}
+
+/* ================= EFFECTS ================= */
+#confetti{position:fixed;inset:0;z-index:900;pointer-events:none}
+#fxLayer{position:fixed;inset:0;z-index:880;pointer-events:none;overflow:hidden}
+.balloon{position:absolute;bottom:-120px;width:56px;height:72px;border-radius:50% 50% 46% 46%;
+  box-shadow:inset -6px -8px 0 rgba(0,0,0,.07)}
+.balloon::before{content:"";position:absolute;left:50%;bottom:-9px;transform:translateX(-50%);
+  border-left:7px solid transparent;border-right:7px solid transparent;border-top:10px solid var(--c,#7fbcf0)}
+.balloon::after{content:"";position:absolute;left:50%;top:100%;width:1.5px;height:70px;
+  background:rgba(63,142,224,.35);transform:translateX(-50%)}
+@keyframes rise{to{transform:translateY(calc(-100vh - 160px))}}
+@keyframes balloonPop{60%{transform:scale(1.35);opacity:.85}100%{transform:scale(2.1);opacity:0}}
+#bdayBanner{position:fixed;inset:0;z-index:960;display:none;place-items:center;text-align:center;padding:24px;
+  background:radial-gradient(circle at 50% 38%,rgba(255,255,255,.88),rgba(232,244,255,.95))}
+#bdayBanner.show{display:grid}
+#bdayBanner h1{font-size:clamp(26px,7vw,62px);color:var(--blue-deep);font-weight:900;
+  text-shadow:0 8px 22px rgba(63,142,224,.28)}
+#bdayBanner .ltr{display:inline-block;opacity:0;transform:translateY(34px) scale(.5);
+  animation:ltrIn .7s cubic-bezier(.2,.9,.3,1.4) forwards}
+@keyframes ltrIn{to{opacity:1;transform:none}}
+#bdayBanner p{margin-top:14px;color:var(--muted);font-size:16px}
+#bdayBanner .row{margin-top:22px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+
+/* ================= PAGER ================= */
+.pager{position:fixed;left:0;right:0;bottom:0;z-index:190;display:flex;justify-content:space-between;gap:10px;
+  padding:10px 14px;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);border-top:1px solid var(--blue-mid)}
+.pager .btn{padding:11px 20px;font-size:14px}
+@media(max-width:560px){
+  .page{padding:86px 14px 116px}
+  .pager .btn{padding:10px 14px;font-size:13px}
+  .arena{height:350px}
+  .stage{height:430px}
+  .steddy{width:104px}
+  .big-love{white-space:normal;width:90%}
+  .letter{padding:24px 18px}
+}
+</style>
+</head>
+<body>
+<!-- shared svg sprite (hearts / stars) -->
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false">
+  <defs>
+    <path id="heartPath" d="M12 21s-7.2-4.6-9.6-8.6C.5 9.4 2.2 5.8 5.7 5.8c2 0 3.4 1.2 4.3 2.5.9-1.3 2.3-2.5 4.3-2.5 3.5 0 5.2 3.6 3.3 6.6C19.2 16.4 12 21 12 21z"/>
+    <path id="starPath" d="M12 2.4l2.9 6 6.6.9-4.8 4.5 1.2 6.5L12 17.2l-5.9 3.1 1.2-6.5-4.8-4.5 6.6-.9z"/>
+  </defs>
+</svg>
+
+<div id="floatLayer" aria-hidden="true"></div>
+<canvas id="confetti" aria-hidden="true"></canvas>
+<div id="fxLayer" aria-hidden="true"></div>
+
+<div id="bdayBanner" role="dialog" aria-live="polite">
+  <div>
+    <h1 id="bannerTitle"></h1>
+    <p>तुम्हारा दिन है, और सारी दुनिया की खुशियाँ तुम्हारी 💙</p>
+    <div class="row">
+      <button class="btn small" id="bannerGo" type="button">Surprise देखो →</button>
+      <button class="btn ghost small" id="bannerClose" type="button">बंद करो</button>
+    </div>
+  </div>
+</div>
+
+<nav id="topnav" aria-label="Sections"></nav>
+<div class="pager">
+  <button class="btn ghost small" id="prevBtn" type="button">← पीछे</button>
+  <button class="btn small" id="nextBtn" type="button">आगे →</button>
+</div>
+<main>
+
+<!-- ================= 1. HOME ================= -->
+<section class="page active" id="page-home">
+  <h1 class="title">Happy Birthday, <span class="em">Simran</span> 💙</h1>
+  <p class="sub">एक छोटा सा surprise, तुम्हारे लिए — <b>Shivam</b> की तरफ़ से</p>
+
+  <div class="hero-cake">
+    <svg class="cake-svg" viewBox="0 0 360 340" role="img" aria-label="Blue and white birthday cake with hearts and stars">
+      <defs>
+        <linearGradient id="t1g" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e6f3ff"/>
+        </linearGradient>
+        <linearGradient id="t2g" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#dceeff"/><stop offset="1" stop-color="#bcdcfa"/>
+        </linearGradient>
+        <linearGradient id="t3g" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#cfe6ff"/>
+        </linearGradient>
+        <radialGradient id="flameG" cx="50%" cy="72%" r="60%">
+          <stop offset="0" stop-color="#fffbe0"/><stop offset=".45" stop-color="#ffd166"/>
+          <stop offset=".78" stop-color="#ff9a3c"/><stop offset="1" stop-color="rgba(255,150,70,.15)"/>
+        </radialGradient>
+      </defs>
+
+      <!-- sparkles -->
+      <g fill="#7fbcf0">
+        <use href="#starPath" class="twinkle" x="0" y="0" width="0" height="0"/>
+      </g>
+      <path class="twinkle" d="M12 2.4l2.9 6 6.6.9-4.8 4.5 1.2 6.5L12 17.2l-5.9 3.1 1.2-6.5-4.8-4.5 6.6-.9z"
+            fill="#9ecdf7" transform="translate(30,58) scale(1.15)"/>
+      <path d="M12 2.4l2.9 6 6.6.9-4.8 4.5 1.2 6.5L12 17.2l-5.9 3.1 1.2-6.5-4.8-4.5 6.6-.9z"
+            fill="#bfe0ff" transform="translate(292,44) scale(1.35)" class="twinkle" style="animation-delay:.6s"/>
+      <path d="M12 2.4l2.9 6 6.6.9-4.8 4.5 1.2 6.5L12 17.2l-5.9 3.1 1.2-6.5-4.8-4.5 6.6-.9z"
+            fill="#8ec6f5" transform="translate(20,196) scale(.9)" class="twinkle" style="animation-delay:1.2s"/>
+      <path d="M12 2.4l2.9 6 6.6.9-4.8 4.5 1.2 6.5L12 17.2l-5.9 3.1 1.2-6.5-4.8-4.5 6.6-.9z"
+            fill="#9ecdf7" transform="translate(310,178) scale(1)" class="twinkle" style="animation-delay:1.7s"/>
+
+      <!-- floating hearts -->
+      <path d="M12 21s-7.2-4.6-9.6-8.6C.5 9.4 2.2 5.8 5.7 5.8c2 0 3.4 1.2 4.3 2.5.9-1.3 2.3-2.5 4.3-2.5 3.5 0 5.2 3.6 3.3 6.6C19.2 16.4 12 21 12 21z"
+            fill="#ff9dc0" transform="translate(46,110) scale(1.2)" class="twinkle" style="animation-delay:.3s"/>
+      <path d="M12 21s-7.2-4.6-9.6-8.6C.5 9.4 2.2 5.8 5.7 5.8c2 0 3.4 1.2 4.3 2.5.9-1.3 2.3-2.5 4.3-2.5 3.5 0 5.2 3.6 3.3 6.6C19.2 16.4 12 21 12 21z"
+            fill="#ffb8d2" transform="translate(268,116) scale(1.05)" class="twinkle" style="animation-delay:1s"/>
+
+      <!-- plate -->
+      <ellipse cx="180" cy="300" rx="150" ry="22" fill="#eaf5ff"/>
+      <ellipse cx="180" cy="295" rx="146" ry="20" fill="#cfe6ff"/>
+
+      <!-- tiers -->
+      <rect x="44" y="228" width="272" height="66" rx="14" fill="url(#t1g)" stroke="#ffffff" stroke-width="3"/>
+      <g fill="#7fbcf0" opacity=".55">
+        <circle cx="76" cy="252" r="5"/><circle cx="116" cy="266" r="5"/><circle cx="156" cy="250" r="5"/>
+        <circle cx="196" cy="266" r="5"/><circle cx="236" cy="250" r="5"/><circle cx="276" cy="266" r="5"/>
+      </g>
+      <path d="M44 240 H316 v10 H44z" fill="#bfe0ff" opacity=".7"/>
+      <g fill="#ffffff">
+        <circle cx="60" cy="234" r="13"/><circle cx="88" cy="234" r="13"/><circle cx="116" cy="234" r="13"/>
+        <circle cx="144" cy="234" r="13"/><circle cx="172" cy="234" r="13"/><circle cx="200" cy="234" r="13"/>
+        <circle cx="228" cy="234" r="13"/><circle cx="256" cy="234" r="13"/><circle cx="284" cy="234" r="13"/>
+        <circle cx="308" cy="234" r="13"/>
+      </g>
+
+      <rect x="78" y="160" width="204" height="62" rx="13" fill="url(#t2g)" stroke="#ffffff" stroke-width="3"/>
+      <g fill="#ffffff" opacity=".85">
+        <circle cx="92" cy="166" r="11"/><circle cx="120" cy="166" r="11"/><circle cx="148" cy="166" r="11"/>
+        <circle cx="176" cy="166" r="11"/><circle cx="204" cy="166" r="11"/><circle cx="232" cy="166" r="11"/>
+        <circle cx="260" cy="166" r="11"/>
+      </g>
+
+      <rect x="116" y="98" width="128" height="56" rx="12" fill="url(#t3g)" stroke="#ffffff" stroke-width="3"/>
+      <g fill="#ffffff">
+        <circle cx="130" cy="104" r="9"/><circle cx="152" cy="104" r="9"/><circle cx="174" cy="104" r="9"/>
+        <circle cx="196" cy="104" r="9"/><circle cx="218" cy="104" r="9"/><circle cx="238" cy="104" r="9"/>
+      </g>
+      <!-- hearts on middle tier -->
+      <path d="M12 21s-7.2-4.6-9.6-8.6C.5 9.4 2.2 5.8 5.7 5.8c2 0 3.4 1.2 4.3 2.5.9-1.3 2.3-2.5 4.3-2.5 3.5 0 5.2 3.6 3.3 6.6C19.2 16.4 12 21 12 21z"
+            fill="#ff9dc0" transform="translate(150,184) scale(.85)"/>
+      <path d="M12 21s-7.2-4.6-9.6-8.6C.5 9.4 2.2 5.8 5.7 5.8c2 0 3.4 1.2 4.3 2.5.9-1.3 2.3-2.5 4.3-2.5 3.5 0 5.2 3.6 3.3 6.6C19.2 16.4 12 21 12 21z"
+            fill="#ffb8d2" transform="translate(190,184) scale(.85)"/>
+
+      <!-- candles -->
+      <g>
+        <rect x="150" y="60" width="11" height="42" rx="5.5" fill="#7fbcf0"/>
+        <rect x="150" y="60" width="11" height="42" rx="5.5" fill="url(#t1g)" opacity=".55"/>
+        <rect x="199" y="60" width="11" height="42" rx="5.5" fill="#7fbcf0"/>
+        <rect x="199" y="60" width="11" height="42" rx="5.5" fill="url(#t1g)" opacity=".55"/>
+        <g class="flame"><ellipse cx="155.5" cy="46" rx="9" ry="15" fill="url(#flameG)"/></g>
+        <g class="flame" style="animation-delay:.1s"><ellipse cx="204.5" cy="46" rx="9" ry="15" fill="url(#flameG)"/></g>
+      </g>
+    </svg>
+  </div>
+
+  <div class="center" style="margin-top:6px">
+    <div class="countdown" id="cdWrap">
+      <div class="cd-box"><div class="cd-num" id="cdD">00</div><div class="cd-lbl">Days</div></div>
+      <div class="cd-box"><div class="cd-num" id="cdH">00</div><div class="cd-lbl">Hours</div></div>
+      <div class="cd-box"><div class="cd-num" id="cdM">00</div><div class="cd-lbl">Minutes</div></div>
+      <div class="cd-box"><div class="cd-num" id="cdS">00</div><div class="cd-lbl">Seconds</div></div>
+    </div>
+    <div class="cd-done" id="cdDone">🎉 तुम्हारा दिन आ गया, Simran! 🎉</div>
+    <p class="sub" style="margin-top:14px">2 November 2026 तक का इंतज़ार… और फिर ढेर सारी खुशियाँ।</p>
+    <button class="btn" id="surpriseBtn" type="button" style="margin-top:12px">🎁 Open Your Surprise</button>
+  </div>
+</section>
+
+<!-- ================= 2. CAKE & CANDLES ================= -->
+<section class="page" id="page-cake">
+  <h2 class="title">Cake &amp; Candles 🎂</h2>
+  <p class="sub">माइक पर फूँक मारो (या नीचे वाला button दबाओ) और candles बुझा दो।</p>
+
+  <div class="card center">
+    <div class="cake2" id="cake2">
+      <div class="plate"></div>
+      <div class="tier t1"></div>
+      <div class="tier t2"></div>
+      <div class="tier t3"></div>
+      <div class="drip d1"></div>
+      <div class="drip d2"></div>
+      <div class="drip d3"></div>
+      <div id="candleRow"></div>
+    </div>
+
+    <div class="meter"><i id="micMeter"></i></div>
+    <p class="sub" id="micStatus" style="margin:6px auto 10px;font-size:13.5px">Mic शुरू करने के लिए नीचे वाला button दबाओ।</p>
+
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      <button class="btn" id="micBtn" type="button">🎤 Blow करो (Mic on)</button>
+      <button class="btn ghost" id="blowTap" type="button">💨 Tap to Blow</button>
+      <button class="btn ghost small" id="cakeReset" type="button">↺ फिर से</button>
+    </div>
+    <div class="result" id="cakeResult">🎉 Happy Birthday, my love! 💙</div>
+  </div>
+</section>
+
+<!-- ================= 3. TEDDY BEAR LOVE WORLD ================= -->
+<section class="page" id="page-teddy">
+  <h2 class="title">Teddy Bear <span class="em">Love World</span> 🧸</h2>
+  <p class="sub">हर teddy पर tap करो — हर एक के पास एक छोटा-सा message है।</p>
+  <div class="teddy-row" id="teddyRow"></div>
+</section>
+
+<!-- ================= 4. GAMES ================= -->
+<section class="page" id="page-games">
+  <h2 class="title">Games <span class="em">Zone</span> 🎮</h2>
+  <p class="sub">चार games — हर game पूरा करने पर अगला खुलेगा।</p>
+
+  <div class="gtabs" id="gtabs">
+    <button class="gtab active" data-g="quiz" type="button">💙 Love Quiz</button>
+    <button class="gtab locked" data-g="pop" type="button">🔒 Balloon Pop</button>
+    <button class="gtab locked" data-g="catch" type="button">🔒 Heart Catch</button>
+    <button class="gtab locked" data-g="find" type="button">🔒 Hidden Hearts</button>
+  </div>
+
+  <div class="card">
+    <!-- GAME 1: QUIZ -->
+    <div class="ggame active" id="g-quiz">
+      <div class="ghead">
+        <div class="gstat">सवाल <span id="qNum">1</span>/6</div>
+        <div class="gstat">Score: <span id="qScore">0</span></div>
+      </div>
+      <div class="qbar"><i id="qBar"></i></div>
+      <div class="quiz-q" id="qText"></div>
+      <div id="qOpts"></div>
+      <div class="result" id="quizResult"></div>
+    </div>
+
+    <!-- GAME 2: BALLOON POP -->
+    <div class="ggame" id="g-pop">
+      <div class="ghead">
+        <div class="gstat">Popped: <span id="popScore">0</span>/10</div>
+        <div class="gstat">समय: <span id="popTime">40</span>s</div>
+        <button class="btn ghost small" id="popStart" type="button">शुरू करो</button>
+      </div>
+      <div class="arena" id="popArena">
+        <div class="hint">Balloons पर tap करके फोड़ो 💙</div>
+      </div>
+      <div class="result" id="popResult"></div>
+    </div>
+
+    <!-- GAME 3: HEART CATCH -->
+    <div class="ggame" id="g-catch">
+      <div class="ghead">
+        <div class="gstat">पकड़े: <span id="catchScore">0</span>/12</div>
+        <div class="gstat">समय: <span id="catchTime">30</span>s</div>
+        <button class="btn ghost small" id="catchStart" type="button">शुरू करो</button>
+      </div>
+      <div class="arena" id="catchArena">
+        <div class="basket" id="basket"></div>
+        <div class="hint">माउस / उँगली / ← → से टोकरी घुमाओ</div>
+      </div>
+      <div class="result" id="catchResult"></div>
+    </div>
+
+    <!-- GAME 4: HIDDEN HEARTS -->
+    <div class="ggame" id="g-find">
+      <div class="ghead">
+        <div class="gstat">मिले: <span id="findScore">0</span>/5</div>
+        <div class="gstat">Tap: <span id="findTaps">0</span></div>
+        <button class="btn ghost small" id="findStart" type="button">नया board</button>
+      </div>
+      <div class="hgrid" id="hgrid"></div>
+      <div class="result" id="findResult"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 5. GIFT BOXES ================= -->
+<section class="page" id="page-gifts">
+  <h2 class="title">Gift Boxes <span class="em">For You</span> 🎁</h2>
+  <p class="sub">चार boxes — हर box पर tap करो और अपना message पढ़ो।</p>
+  <div class="gifts" id="giftWrap"></div>
+</section>
+
+<!-- ================= 6. OUR JOURNEY ================= -->
+<section class="page" id="page-journey">
+  <h2 class="title">Our <span class="em">Journey</span> 💫</h2>
+  <p class="sub">हमारी कुछ ख़ास यादें — हर photo के साथ एक छोटी सी बात।</p>
+  <div class="journey">
+
+    <article class="jcard">
+      <div class="jphoto">
+        <div class="num">01</div>
+        <div class="ph"><b>📸</b>यहाँ अपनी पहली photo लगाओ<br><code>photo1.jpg</code></div>
+      </div>
+      <div class="jcap"><span class="mem" contenteditable="true">पहली मुलाक़ात — मैं घबराया हुआ था, और तुम मुस्कुरा रही थीं। उसी पल से सब कुछ बदल गया।</span></div>
+    </article>
+
+    <article class="jcard">
+      <div class="jphoto">
+        <div class="num">02</div>
+        <div class="ph"><b>📸</b>यहाँ दूसरी photo लगाओ<br><code>photo2.jpg</code></div>
+      </div>
+      <div class="jcap"><span class="mem" contenteditable="true">वो दिन जब हमने बिना वजह हँसते-हँसते पूरी शाम गुज़ार दी। तुम्हारी हँसी मेरी सबसे पसंदीदा आवाज़ है।</span></div>
+    </article>
+
+    <article class="jcard">
+      <div class="jphoto">
+        <div class="num">03</div>
+        <div class="ph"><b>📸</b>यहाँ तीसरी photo लगाओ<br><code>photo3.jpg</code></div>
+      </div>
+      <div class="jcap"><span class="mem" contenteditable="true">जब मैं थका हुआ था और तुमने सिर्फ़ "मैं हूँ ना" कहा था। उस एक वाक्य ने सब ठीक कर दिया।</span></div>
+    </article>
+
+    <article class="jcard">
+      <div class="jphoto">
+        <div class="num">04</div>
+        <div class="ph"><b>📸</b>यहाँ अपनी पसंदीदा photo लगाओ<br><code>photo4.jpg</code></div>
+      </div>
+      <div class="jcap"><span class="mem" contenteditable="true">हमारा कोई planning वाला day — और फिर भी best day. तुम्हारे साथ छोटी-छोटी चीज़ें भी यादगार बन जाती हैं।</span></div>
+    </article>
+
+  </div>
+  <p class="edit-hint">✍️ हर caption पर tap करके अपनी असली याद लिख सकते हो — यह सिर्फ़ तुम्हारी screen पर बदलेगा।</p>
+</section>
+
+<!-- ================= 7. LOVE LETTER ================= -->
+<section class="page" id="page-letter">
+  <h2 class="title">A Letter For <span class="em">You</span> 💌</h2>
+  <p class="sub">पूरा दिल से लिखा हुआ — सिर्फ़ तुम्हारे लिए।</p>
+
+  <div class="letter">
+    <p class="salut">मेरी प्यारी सिमरन,</p>
+
+    <p>जन्मदिन की बहुत-बहुत शुभकामनाएँ, मेरी जान। आज तुम्हारा दिन है, और मैं चाहता हूँ कि आज तुम्हें वो सारी खुशियाँ मिलें जो तुमने मुझे हर दिन दी हैं।</p>
+
+    <p>सिमरन, मैं यह नहीं कहूँगा कि हमारा सफ़र आसान रहा। कई दिन ऐसे भी थे जब मैं खुद से थक जाता था, जब सब कुछ बोझ लगता था। और उन्हीं दिनों में तुम मेरे साथ खड़ी रहीं। तुमने कभी मुझसे यह नहीं पूछा कि तुम कितने थके हो — तुमने सिर्फ़ इतना कहा, "मैं हूँ ना।" वो दो शब्द मेरे लिए पूरी दुनिया से बड़े हैं।</p>
+
+    <p>तुमने मुझे जितना प्यार दिया है, उतना मैं ज़िंदगी भर लौटा भी नहीं सकता। जब मैं भूखा रह जाता, तुम पहले पूछती थीं कि खाना खाया या नहीं। जब मैं किसी बात पर चुप हो जाता, तुम बिना ज़ोर दिए मेरा मूड पढ़ लेती थीं। जब मैं किसी सपने की बात करता, तुम उसे अपना सपना मान लेती थीं। तुमने मेरी ख़ुशी को अपनी ख़ुशी बना लिया — यह प्यार नहीं, यह एक वरदान है।</p>
+
+    <p>तुम मुझे हर दिन बेहतर इंसान बनाती हो, सिमरन। तुम्हारे होने से मुझमें हिम्मत आती है, सब्र आता है, और यह यक़ीन आता है कि घर सिर्फ़ ईंटों से नहीं बनता — घर वो होता है जहाँ तुम मुस्कुरा कर आओ। तुम्हारी हँसी मेरी सबसे पसंदीदा आवाज़ है, और तुम्हारा नाम मेरी सबसे आसान दुआ।</p>
+
+    <p>आज मैं वादा करता हूँ कि मैं हमेशा तुम्हारे साथ चलूँगा — अच्छे दिनों में, बुरे दिनों में, तुम्हारी जीत में और तुम्हारी थकान में। तुम्हारे सपनों को अपने सपने बनाऊँगा, तुम्हारे हर आँसू की वजह बनने से पहले हज़ार बार सोचूँगा, और तुम्हें कभी अकेला महसूस नहीं होने दूँगा।</p>
+
+    <p>ज़िंदगी लंबी है, सिमरन, और मुझे उम्मीद है कि इसमें तुम सबसे लंबा हिस्सा हो। तुम्हारे साथ हर छोटी चीज़ ख़ास बन जाती है — चाय की चुस्की, देर रात की बातें, बेवजह की झगड़े, और फिर बिना कहे सुलह।</p>
+
+    <p>मैं तुम्हें आज भी पहले दिन से ज़्यादा प्यार करता हूँ। और कल और भी करूँगा। हर दिन। हर साल।</p>
+
+    <p class="sign">जन्मदिन मुबारक हो, मेरे प्यार। हमेशा तुम्हारा, शिवम।</p>
+  </div>
+</section>
+
+<!-- ================= 8. TEDDY BEAR SURPRISE ================= -->
+<section class="page" id="page-tsurprise">
+  <h2 class="title">Teddy Bear <span class="em">Surprise</span> 🧸</h2>
+  <p class="sub">Gift box पर tap करो… कुछ प्यारा इंतज़ार कर रहा है।</p>
+
+  <div class="stage" id="stageS">
+    <div class="big-love" id="bigLove">I Love You Simran 💙</div>
+
+    <div class="steddy" id="teddyA" aria-hidden="true">
+      <svg viewBox="0 0 140 150" width="126" style="display:block">
+        <circle cx="34" cy="30" r="17" fill="#a9d3f7"/><circle cx="34" cy="30" r="9" fill="#ffd7e3"/>
+        <circle cx="106" cy="30" r="17" fill="#a9d3f7"/><circle cx="106" cy="30" r="9" fill="#ffd7e3"/>
+        <circle cx="70" cy="52" r="40" fill="#cfe6ff"/>
+        <circle cx="56" cy="46" r="5" fill="#2b4a6f"/><circle cx="84" cy="46" r="5" fill="#2b4a6f"/>
+        <ellipse cx="70" cy="64" rx="15" ry="12" fill="#fff6ef"/>
+        <ellipse cx="70" cy="58" rx="5" ry="4" fill="#7c5c46"/>
+        <path d="M62 66q8 8 16 0" stroke="#7c5c46" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <ellipse cx="70" cy="112" rx="42" ry="36" fill="#cfe6ff"/>
+        <ellipse cx="70" cy="116" rx="26" ry="24" fill="#e9f5ff"/>
+        <path d="M70 118c-11-8-15-13-15-18a7 7 0 0 1 13-4 7 7 0 0 1 13 4c0 5-4 10-11 18z" fill="#ff7fa8"/>
+        <ellipse cx="70" cy="104" rx="10" ry="7" fill="#ffb8d2" opacity=".55"/>
+      </svg>
+    </div>
+
+    <div class="steddy" id="teddyB" aria-hidden="true">
+      <svg viewBox="0 0 140 150" width="126" style="display:block">
+        <circle cx="34" cy="30" r="17" fill="#a9d3f7"/><circle cx="34" cy="30" r="9" fill="#ffd7e3"/>
+        <circle cx="106" cy="30" r="17" fill="#a9d3f7"/><circle cx="106" cy="30" r="9" fill="#ffd7e3"/>
+        <circle cx="70" cy="52" r="40" fill="#e3f2ff"/>
+        <circle cx="56" cy="46" r="5" fill="#2b4a6f"/><circle cx="84" cy="46" r="5" fill="#2b4a6f"/>
+        <ellipse cx="70" cy="64" rx="15" ry="12" fill="#fff6ef"/>
+        <ellipse cx="70" cy="58" rx="5" ry="4" fill="#7c5c46"/>
+        <path d="M62 68q8 7 16 0" stroke="#7c5c46" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <ellipse cx="70" cy="112" rx="42" ry="36" fill="#e3f2ff"/>
+        <ellipse cx="70" cy="116" rx="26" ry="24" fill="#f4fbff"/>
+        <circle cx="52" cy="112" r="9" fill="#ffd7e3"/><circle cx="88" cy="112" r="9" fill="#ffd7e3"/>
+      </svg>
+    </div>
+
+    <button class="sbox" id="sbox" type="button" aria-label="Gift box खोलो">
+      <span class="sbow">🎀</span>
+      <span class="sribbon"></span>
+      <span class="sbody"></span>
+      <span class="slid"></span>
+    </button>
+  </div>
+  <p class="sub" id="sHint" style="margin-top:16px">👆 Box पर tap करो</p>
+</section>
+
+<!-- ================= 9. PROMISES ================= -->
+<section class="page" id="page-promise">
+  <h2 class="title">A Promise for <span class="em">Forever</span> 💞</h2>
+  <p class="sub">बीच वाले दिल पर tap करते रहो — हर tap एक वादा खोलेगा।</p>
+
+  <div class="pstage" id="pstage">
+    <div class="pcount" id="pcount">0 / 6</div>
+    <button class="pheart" id="pheart" type="button" aria-label="दिल पर tap करो">
+      <svg viewBox="0 0 160 150" width="160" height="150">
+        <defs>
+          <linearGradient id="pgrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffb3cf"/><stop offset="1" stop-color="#ff6f9c"/>
+          </linearGradient>
+        </defs>
+        <path d="M80 140s-62-38-70-72C4 34 22 12 48 12c14 0 25 8 32 18 7-10 18-18 32-18 26 0 44 22 38 56-8 34-70 72-70 72z"
+              fill="url(#pgrad)"/>
+      </svg>
+    </button>
+    <div class="plist"><div class="promise" id="promiseBox"></div></div>
+  </div>
+
+  <div class="pfinal" id="pFinal">You Are My Today, My Tomorrow, and My Forever, Simran — Shivam.</div>
+</section>
+
+<!-- ================= 10. FINAL ================= -->
+<section class="page" id="page-final">
+  <div class="fwrap">
+    <div class="ftitle">Happy Birthday to You,<br>My Beautiful Simran! 🎂💙</div>
+    <div class="fstage">
+      <div class="fscake">
+        <svg viewBox="0 0 220 190" width="100%" aria-hidden="true">
+          <ellipse cx="110" cy="176" rx="100" ry="12" fill="#dcefff"/>
+          <rect x="24" y="112" width="172" height="54" rx="12" fill="#ffffff" stroke="#e3f1ff" stroke-width="2"/>
+          <rect x="24" y="112" width="172" height="14" rx="7" fill="#bfe0ff"/>
+          <rect x="52" y="66" width="116" height="48" rx="11" fill="#e6f3ff" stroke="#fff" stroke-width="2"/>
+          <rect x="52" y="66" width="116" height="12" rx="6" fill="#7fbcf0" opacity=".6"/>
+          <rect x="76" y="34" width="9" height="34" rx="4.5" fill="#fff" stroke="#bfe0ff"/>
+          <rect x="112" y="34" width="9" height="34" rx="4.5" fill="#fff" stroke="#bfe0ff"/>
+          <g class="flame"><ellipse cx="80.5" cy="26" rx="6" ry="11" fill="#ffd166"/></g>
+          <g class="flame" style="animation-delay:.1s"><ellipse cx="116.5" cy="26" rx="6" ry="11" fill="#ffd166"/></g>
+          <path d="M110 100c-11-8-15-13-15-18a7 7 0 0 1 13-4 7 7 0 0 1 13 4c0 5-4 10-11 18z" fill="#ff9dc0"/>
+        </svg>
+      </div>
+    </div>
+    <div class="fsub">Thank You for Open My Surprise! 💙</div>
+    <div>
+      <button class="btn" id="finalBurst" type="button">🎈 फिर से Celebrate करो</button>
+      <button class="btn ghost" id="finalHome" type="button">↩︎ शुरू से देखो</button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script>
+(function(){
+"use strict";
+
+/* ============================================================
+   Helpers
+   ============================================================ */
+function $(s,r){ return (r||document).querySelector(s); }
+function $$(s,r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); }
+function rnd(a,b){ return a + Math.random()*(b-a); }
+function pick(a){ return a[(Math.random()*a.length)|0]; }
+
+var params = new URLSearchParams(location.search);
+var TEST = params.get('test') === '1';   /* ?test=1  -> countdown ends in 5s (testing only) */
+
+var toastEl = null, toastTimer = null;
+function toast(msg){
+  if(!toastEl){ toastEl = document.createElement('div'); toastEl.className = 'toast'; document.body.appendChild(toastEl); }
+  toastEl.textContent = msg;
+  toastEl.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function(){ toastEl.classList.remove('show'); }, 2400);
+}
+
+var BLUE_HEARTS = ['💙','🤍','💙','⭐','🤍','💙','✨'];
+
+/* ============================================================
+   1. Ambient floating hearts
+   ============================================================ */
+var floatLayer = document.getElementById('floatLayer');
+function spawnFloatHeart(emoji, dur){
+  emoji = emoji || pick(BLUE_HEARTS);
+  var h = document.createElement('span');
+  h.className = 'fh';
+  h.textContent = emoji;
+  h.style.left = rnd(2,96) + '%';
+  h.style.fontSize = rnd(12,26) + 'px';
+  h.style.animationDuration = (dur || rnd(9,15)) + 's';
+  floatLayer.appendChild(h);
+  h.addEventListener('animationend', function(){ h.remove(); });
+}
+for(var fi=0; fi<10; fi++) spawnFloatHeart(null, rnd(7,13));
+setInterval(function(){ spawnFloatHeart(); }, 1100);
+
+/* heart rain inside any layer (used by teddy surprise) */
+function heartRain(layer, count, emojis){
+  emojis = emojis || ['💙','🤍','💙','💗','⭐','💙'];
+  for(var i=0;i<count;i++){
+    (function(i){
+      setTimeout(function(){
+        var h = document.createElement('span');
+        h.className = 'fh';
+        h.textContent = pick(emojis);
+        h.style.left = rnd(1,97) + '%';
+        h.style.fontSize = rnd(16,34) + 'px';
+        h.style.animationDuration = rnd(5,9) + 's';
+        (layer || floatLayer).appendChild(h);
+        h.addEventListener('animationend', function(){ h.remove(); });
+      }, i*90);
+    })(i);
+  }
+}
+
+/* small heart pop from a point inside a positioned parent */
+function burstAt(x, y, parent, count){
+  for(var i=0;i<count;i++){
+    var p = document.createElement('span');
+    p.className = 'pop-heart';
+    p.textContent = pick(['💙','💗','💙','⭐','🤍']);
+    p.style.left = (x-10) + 'px';
+    p.style.top  = (y-10) + 'px';
+    p.style.setProperty('--dx', rnd(-70,70) + 'px');
+    p.style.fontSize = rnd(14,26) + 'px';
+    parent.appendChild(p);
+    p.addEventListener('animationend', function(){ p.remove(); });
+  }
+}
+
+/* ============================================================
+   2. Confetti
+   ============================================================ */
+var confCanvas = document.getElementById('confetti');
+var confCtx = confCanvas.getContext('2d');
+function confSize(){ confCanvas.width = window.innerWidth; confCanvas.height = window.innerHeight; }
+confSize();
+window.addEventListener('resize', confSize, {passive:true});
+var confParticles = [], confRaf = null, confLast = 0;
+var CONF_COLORS = ['#3f8ee0','#7fbcf0','#bfe0ff','#ff8fb1','#ffd166','#ffffff','#a9d3f7'];
+function confettiBurst(count){
+  count = count || 140;
+  for(var i=0;i<count;i++){
+    confParticles.push({
+      x: rnd(0, confCanvas.width),
+      y: rnd(-confCanvas.height*0.5, -10),
+      w: rnd(6,13), h: rnd(8,16),
+      vy: rnd(1.7,4.4), vx: rnd(-1.3,2.6),
+      r: rnd(0,Math.PI*2), vr: rnd(-0.14,0.14),
+      c: pick(CONF_COLORS)
+    });
+  }
+  confLast = performance.now();
+  if(!confRaf) confRaf = requestAnimationFrame(confFrame);
+}
+function confFrame(now){
+  var dt = Math.min(2.6, Math.max(0.4, (now - confLast)/16.67));
+  confLast = now;
+  confCtx.clearRect(0,0,confCanvas.width,confCanvas.height);
+  for(var i=confParticles.length-1;i>=0;i--){
+    var p = confParticles[i];
+    p.x += p.vx*dt; p.y += p.vy*dt; p.vy += 0.045*dt; p.r += p.vr*dt;
+    if(p.y > confCanvas.height + 50){ confParticles.splice(i,1); continue; }
+    confCtx.save();
+    confCtx.translate(p.x, p.y);
+    confCtx.rotate(p.r);
+    confCtx.fillStyle = p.c;
+    confCtx.fillRect(-p.w/2, -p.h/2, p.w, p.h);
+    confCtx.restore();
+  }
+  if(confParticles.length){ confRaf = requestAnimationFrame(confFrame); }
+  else { confCtx.clearRect(0,0,confCanvas.width,confCanvas.height); confRaf = null; }
+}
+
+/* ============================================================
+   3. Balloon blast
+   ============================================================ */
+var fxLayer = document.getElementById('fxLayer');
+function balloonBlast(count){
+  count = count || 20;
+  var palette = ['#7fbcf0','#3f8ee0','#ff9dc0','#ffd166','#bfe0ff','#ffffff'];
+  for(var i=0;i<count;i++){
+    (function(i){
+      var wrap = document.createElement('div');
+      wrap.style.cssText = 'position:absolute;left:' + rnd(3,92) + '%;bottom:-140px;' +
+                           'animation:rise ' + rnd(3.2,5.2).toFixed(2) + 's linear forwards';
+      var b = document.createElement('div');
+      b.style.cssText = 'position:relative;width:' + rnd(44,62).toFixed(0) + 'px;height:' + rnd(58,80).toFixed(0) + 'px;' +
+                        'border-radius:50% 50% 46% 46%;box-shadow:inset -6px -8px 0 rgba(0,0,0,.06);background:' + pick(palette);
+      var str = document.createElement('div');
+      str.style.cssText = 'position:absolute;left:50%;top:100%;width:2px;height:60px;' +
+                          'background:rgba(63,142,224,.4);transform:translateX(-50%)';
+      b.appendChild(str);
+      wrap.appendChild(b);
+      fxLayer.appendChild(wrap);
+      setTimeout(function(){
+        b.style.animation = 'balloonPop .5s ease-out forwards';
+        setTimeout(function(){ wrap.remove(); }, 570);
+      }, 700 + i*70 + Math.random()*500);
+    })(i);
+  }
+  setTimeout(function(){ confettiBurst(190); }, 1000);
+}
+
+/* ============================================================
+   4. Navigation / pages
+   ============================================================ */
+var PAGES = [
+  {id:'home',      label:'🏠 Home'},
+  {id:'cake',      label:'🎂 Cake & Candles'},
+  {id:'teddy',     label:'🧸 Teddy World'},
+  {id:'games',     label:'🎮 Games'},
+  {id:'gifts',     label:'🎁 Gift Boxes'},
+  {id:'journey',   label:'💫 Our Journey'},
+  {id:'letter',    label:'💌 Love Letter'},
+  {id:'tsurprise', label:'🧸 Teddy Surprise'},
+  {id:'promise',   label:'💞 Promises'},
+  {id:'final',     label:'🎉 Final'}
+];
+var navEl = document.getElementById('topnav');
+var current = 0;
+
+PAGES.forEach(function(p, i){
+  var b = document.createElement('button');
+  b.type = 'button';
+  b.className = 'navlink' + (i === 0 ? ' active' : '');
+  b.textContent = p.label;
+  b.addEventListener('click', function(){ go(i); });
+  navEl.appendChild(b);
+  p.el = document.getElementById('page-' + p.id);
+});
+
+var nextBtn = document.getElementById('nextBtn');
+var prevBtn = document.getElementById('prevBtn');
+
+function go(i){
+  i = Math.max(0, Math.min(PAGES.length-1, i));
+  if(i === current) return;
+  /* gate: must finish all 4 games before leaving the Games page forward */
+  if(current === 3 && i > 3 && !allGamesDone()){
+    toast('पहले चारों games पूरे करो 💙');
+    return;
+  }
+  current = i;
+  PAGES.forEach(function(p, k){
+    p.el.classList.toggle('active', k === i);
+    var link = navEl.children[k];
+    if(link) link.classList.toggle('active', k === i);
+  });
+  window.scrollTo({top:0, behavior:'auto'});
+  onEnter(PAGES[i].id);
+}
+var entered = {};
+function onEnter(id){
+  if(id === 'final' && !entered.final){ entered.final = true; setTimeout(function(){ balloonBlast(16); }, 250); }
+}
+nextBtn.addEventListener('click', function(){ 
+  if(current === 3 && !allGamesDone()){ toast('पहले चारों games पूरे करो 💙'); return; }
+  go(current+1);
+});
+prevBtn.addEventListener('click', function(){ go(current-1); });
+
+/* ============================================================
+   5. Countdown  ->  2 November 2026, 00:00 (local time)
+   ============================================================ */
+var TARGET = TEST ? new Date(Date.now() + 5000) : new Date(2026, 10, 2, 0, 0, 0);
+var cdD = document.getElementById('cdD'), cdH = document.getElementById('cdH'),
+    cdM = document.getElementById('cdM'), cdS = document.getElementById('cdS');
+var cdDone = document.getElementById('cdDone');
+var countdownEnded = false, cdTimer = null;
+
+function pad(n){ return (n<10 ? '0' : '') + n; }
+
+function tickCountdown(){
+  var diff = TARGET.getTime() - Date.now();
+  if(diff <= 0){
+    clearInterval(cdTimer);
+    cdD.textContent = cdH.textContent = cdM.textContent = cdS.textContent = '00';
+    if(!countdownEnded){ countdownEnded = true; countdownFinished(); }
+    return;
+  }
+  var s = Math.floor(diff/1000);
+  cdD.textContent = pad(Math.floor(s/86400));
+  cdH.textContent = pad(Math.floor(s%86400/3600));
+  cdM.textContent = pad(Math.floor(s%3600/60));
+  cdS.textContent = pad(s%60);
+}
+cdTimer = setInterval(tickCountdown, 250);
+tickCountdown();
+
+function countdownFinished(){
+  cdDone.classList.add('show');
+  balloonBlast(24);
+  setTimeout(function(){ confettiBurst(240); }, 900);
+  setTimeout(function(){ showBanner(); }, 1500);
+}
+
+/* ============================================================
+   6. "Happy Birthday, Simran!" banner animation
+   ============================================================ */
+var banner = document.getElementById('bdayBanner');
+var bannerTitle = document.getElementById('bannerTitle');
+function showBanner(){
+  bannerTitle.innerHTML = '';
+  var text = 'Happy Birthday, Simran!';
+  for(var i=0;i<text.length;i++){
+    var s = document.createElement('span');
+    s.className = 'ltr';
+    s.textContent = text[i] === ' ' ? '\u00A0' : text[i];
+    s.style.animationDelay = (i*0.065).toFixed(3) + 's';
+    bannerTitle.appendChild(s);
+  }
+  var e = document.createElement('span');
+  e.className = 'ltr';
+  e.textContent = ' 🎉';
+  e.style.animationDelay = (text.length*0.065).toFixed(3) + 's';
+  bannerTitle.appendChild(e);
+  banner.classList.add('show');
+  confettiBurst(160);
+}
+document.getElementById('bannerClose').addEventListener('click', function(){ banner.classList.remove('show'); });
+document.getElementById('bannerGo').addEventListener('click', function(){
+  banner.classList.remove('show');
+  go(1);
+});
+document.getElementById('surpriseBtn').addEventListener('click', function(){
+  balloonBlast(22);
+  setTimeout(function(){ confettiBurst(220); }, 700);
+  showBanner();
+  setTimeout(function(){ go(1); }, 3800);
+});
+
+/* ============================================================
+   7. Cake & candles
+   ============================================================ */
+var CANDLE_COUNT = 5;
+var candleRow = document.getElementById('candleRow');
+var candles = [], cakeResult = document.getElementById('cakeResult');
+var micMeter = document.getElementById('micMeter');
+var micStatus = document.getElementById('micStatus');
+var micBtn = document.getElementById('micBtn');
+
+function buildCandles(){
+  candleRow.innerHTML = '';
+  candles = [];
+  for(var i=0;i<CANDLE_COUNT;i++){
+    var c = document.createElement('div');
+    c.className = 'candle';
+    var wick = document.createElement('span'); wick.className = 'wick';
+    var flame = document.createElement('span'); flame.className = 'flame';
+    var puff = document.createElement('span'); puff.className = 'pufffx'; puff.textContent = '💨';
+    c.appendChild(wick); c.appendChild(puff); c.appendChild(flame);
+    candleRow.appendChild(c);
+    candles.push(c);
+  }
+  candleRow.style.width = (CANDLE_COUNT*22 + 34) + 'px';
+}
+buildCandles();
+
+function litCandles(){ return candles.filter(function(c){ return !c.classList.contains('out'); }); }
+
+function blowOneCandle(){
+  var lit = litCandles();
+  if(!lit.length) return;
+  lit[0].classList.add('out');
+  if(!litCandles().length) candlesAllOut();
+}
+function candlesAllOut(){
+  cakeResult.classList.add('show');
+  cakeResult.textContent = '🎉 Happy Birthday, my love! 💙';
+  burstAt(150, 60, $('#cake2'), 12);
+  confettiBurst(150);
+  heartRain(null, 22, ['💙','💗','🤍','⭐']);
+  toast('सारी candles बुझ गईं — wish पूरी होगी 💙');
+  stopMic();
+}
+function resetCake(){
+  candles.forEach(function(c){ c.classList.remove('out'); });
+  cakeResult.classList.remove('show');
+}
+
+/* --- microphone blow detection --- */
+var micStream = null, audioCtx = null, analyser = null, dataBuf = null, micRaf = null, blowEnergy = 0;
+
+function micLoop(){
+  micRaf = requestAnimationFrame(micLoop);
+  if(!analyser) return;
+  analyser.getByteTimeDomainData(dataBuf);
+  var sum = 0;
+  for(var i=0;i<dataBuf.length;i++){ var v = (dataBuf[i]-128)/128; sum += v*v; }
+  var rms = Math.sqrt(sum/dataBuf.length);
+  micMeter.style.width = Math.min(100, rms*420).toFixed(1) + '%';
+  if(rms > 0.075){ blowEnergy++; } else { blowEnergy = Math.max(0, blowEnergy-2); }
+  if(blowEnergy >= 9){ blowEnergy = 0; blowOneCandle(); }
+}
+function stopMic(){
+  if(micRaf){ cancelAnimationFrame(micRaf); micRaf = null; }
+  if(micStream){ micStream.getTracks().forEach(function(t){ t.stop(); }); micStream = null; }
+  if(audioCtx){ try{ audioCtx.close(); }catch(e){} audioCtx = null; }
+  analyser = null;
+  micMeter.style.width = '0%';
+  micBtn.textContent = '🎤 Blow करो (Mic on)';
+}
+function startMic(){
+  if(!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia){
+    micStatus.textContent = 'इस browser में mic support नहीं है — "Tap to Blow" दबाओ।';
+    return;
+  }
+  micStatus.textContent = 'Mic चालू कर रहा हूँ…';
+  navigator.mediaDevices.getUserMedia({
+    audio:{ echoCancellation:false, noiseSuppression:false, autoGainControl:false }
+  }).then(function(stream){
+    micStream = stream;
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    var src = audioCtx.createMediaStreamSource(stream);
+    analyser = audioCtx.createAnalyser();
+    analyser.fftSize = 1024;
+    analyser.smoothingTimeConstant = 0.55;
+    src.connect(analyser);
+    dataBuf = new Uint8Array(analyser.fftSize);
+    micBtn.textContent = '⏹ Mic बंद करो';
+    micStatus.textContent = 'अब mic की तरफ़ ज़ोर से फूँक मारो 💨 (या button दबाओ)';
+    blowEnergy = 0;
+    micLoop();
+  }).catch(function(){
+    micStatus.textContent = 'Mic की इजाज़त नहीं मिली — नीचे "Tap to Blow" दबाओ 💙';
+    toast('Mic available नहीं है — "Tap to Blow" use करो 💙');
+  });
+}
+micBtn.addEventListener('click', function(){
+  if(micStream){ stopMic(); micStatus.textContent = 'Mic बंद है। फिर चालू कर सकती हो।'; }
+  else startMic();
+});
+document.getElementById('blowTap').addEventListener('click', function(){
+  blowOneCandle();
+});
+document.getElementById('cakeReset').addEventListener('click', function(){
+  resetCake();
+  micStatus.textContent = 'Candles फिर जल गईं — दोबारा try करो 💙';
+});
+
+/* ============================================================
+   8. Teddy Bear Love World
+   ============================================================ */
+var TEDDIES = [
+  {cls:'t-white', name:'Sharmili Teddy',   tag:'🙈', msg:'ये teddy तुम्हें देखते ही शरमा जाता है — बिल्कुल मेरी तरह। कहता है: "Simran, तुम हँसो तो सब ठीक है।"'},
+  {cls:'t-soft',  name:'Chai Teddy',       tag:'☕', msg:'कहता है: "आओ, पहले चाय पिएँ, फिर दुनिया की सारी बातें करेंगे। तुम्हारे साथ चाय भी celebration बन जाती है।"'},
+  {cls:'t-pink',  name:'Dilwala Teddy',    tag:'💗', msg:'इसके पास एक ही दिल है — और वो भी तुम्हारा। बाक़ी सब इसने गिनती में नहीं रखा।'},
+  {cls:'t-white', name:'Jaagta Teddy',     tag:'😴', msg:'रात 2 बजे भी जगा रहता है, तुम्हारे message का इंतज़ार करते हुए। मेरे जैसा ही बेवकूफ़ है।'},
+  {cls:'t-soft',  name:'Filmy Teddy',      tag:'🍰', msg:'इसकी डायलॉग है: "तुम्हारे बिना सब सूनापन है — जैसे cake बिना cream, और birthday बिना तुम।"'},
+  {cls:'t-pink',  name:'Forever Teddy',    tag:'🧸', msg:'कहता है: "हर जन्म में तुम्हें ढूँढ लूँगा।" ये वादा है — मेरी तरफ़ से भी।'}
+];
+
+function teddySVG(cls){
+  return '<svg class="teddy ' + cls + '" viewBox="0 0 140 150" role="img" aria-hidden="true">' +
+    '<circle cx="30" cy="32" r="17" class="fur-b"/><circle cx="30" cy="32" r="8.5" class="ear-in"/>' +
+    '<circle cx="110" cy="32" r="17" class="fur-b"/><circle cx="110" cy="32" r="8.5" class="ear-in"/>' +
+    '<circle cx="70" cy="56" r="40" class="fur-a"/>' +
+    '<circle cx="56" cy="50" r="5" class="eye"/><circle cx="84" cy="50" r="5" class="eye"/>' +
+    '<circle cx="57.8" cy="48" r="1.7" fill="#fff"/><circle cx="85.8" cy="48" r="1.7" fill="#fff"/>' +
+    '<ellipse cx="70" cy="68" rx="16" ry="12.5" class="muzzle"/>' +
+    '<ellipse cx="70" cy="62" rx="5.2" ry="4" class="nose"/>' +
+    '<path d="M61 71q9 8 18 0" stroke="#7c5c46" stroke-width="2" fill="none" stroke-linecap="round"/>' +
+    '<ellipse cx="70" cy="114" rx="42" ry="35" class="fur-a"/>' +
+    '<ellipse cx="70" cy="118" rx="26" ry="23" class="tummy" fill="rgba(255,255,255,.55)"/>' +
+    '<ellipse cx="34" cy="98" rx="9" ry="13" class="fur-b"/><ellipse cx="106" cy="98" rx="9" ry="13" class="fur-b"/>' +
+    '<ellipse cx="48" cy="142" rx="14" ry="9" class="fur-b"/><ellipse cx="92" cy="142" rx="14" ry="9" class="fur-b"/>' +
+    '</svg>';
+}
+
+var teddyRow = document.getElementById('teddyRow');
+TEDDIES.forEach(function(t){
+  var card = document.createElement('article');
+  card.className = 'teddy-card';
+  card.innerHTML = teddySVG(t.cls) +
+    '<h3>' + t.tag + ' ' + t.name + '</h3>' +
+    '<p class="tmsg" style="color:#8fb0d4;font-weight:700">Tap करो 💙</p>';
+  card.addEventListener('click', function(ev){
+    var r = card.getBoundingClientRect();
+    burstAt(ev.clientX - r.left, ev.clientY - r.top, card, 7);
+    var msg = card.querySelector('.tmsg');
+    if(card.dataset.open === '1'){
+      card.dataset.open = '0';
+      msg.textContent = 'Tap करो 💙';
+      msg.style.color = '#8fb0d4';
+      msg.style.fontWeight = '700';
+    } else {
+      card.dataset.open = '1';
+      msg.textContent = t.msg;
+      msg.style.color = '#456b90';
+      msg.style.fontWeight = '400';
+    }
+  });
+  teddyRow.appendChild(card);
+});
+
+/* ============================================================
+   9. GAMES
+   ============================================================ */
+var solved = {quiz:false, pop:false, catch:false, find:false};
+function allGamesDone(){ return solved.quiz && solved.pop && solved.catch && solved.find; }
+
+function markSolved(key, msg){
+  if(solved[key]) return;
+  solved[key] = true;
+  confettiBurst(90);
+  toast(msg);
+  refreshTabs();
+}
+var TAB_ORDER = ['quiz','pop','catch','find'];
+function refreshTabs(){
+  var done = 0;
+  for(var i=0;i<TAB_ORDER.length;i++){
+    if(i>0 && !solved[TAB_ORDER[i-1]]) break;
+    done = i+1;
+  }
+  $$('#gtabs .gtab').forEach(function(tab, i){
+    var unlocked = tab.dataset.g === 'quiz' || (i>0 && solved[TAB_ORDER[i-1]]);
+    tab.classList.toggle('locked', !unlocked);
+    var base = {quiz:'💙 Love Quiz', pop:'🎈 Balloon Pop', catch:'💗 Heart Catch', find:'⭐ Hidden Hearts'}[tab.dataset.g];
+    tab.textContent = (unlocked ? base : '🔒 ' + base.replace(/^\S+\s/,'')) + (solved[tab.dataset.g] ? ' ✅' : '');
+  });
+  if(allGamesDone()) nextBtn.textContent = 'आगे →';
+}
+$$('#gtabs .gtab').forEach(function(tab){
+  tab.addEventListener('click', function(){
+    if(tab.classList.contains('locked')){ toast('पहले पिछला game पूरा करो 💙'); return; }
+    $$('#gtabs .gtab').forEach(function(t){ t.classList.remove('active'); });
+    tab.classList.add('active');
+    $$('.ggame').forEach(function(g){ g.classList.remove('active'); });
+    $('#g-' + tab.dataset.g).classList.add('active');
+    if(tab.dataset.g === 'pop') resetPop();
+    if(tab.dataset.g === 'catch') resetCatch();
+    if(tab.dataset.g === 'find') resetFind();
+  });
+});
+refreshTabs();
+
+/* ---------- GAME 1 : Love Quiz ---------- */
+var QUIZ = [
+  {q:'Simran की सबसे प्यारी चीज़ मेरे पास क्या है?',
+   o:['उसकी हँसी और उसका भरोसा','मेरा phone','पैसे','मेरी bike'], a:0},
+  {q:'मेरी सबसे पसंदीदा आवाज़ कौन सी है?',
+   o:['Alarm की घंटी','Simran का "सुनो ना…"','Traffic का शोर','Notification tone'], a:1},
+  {q:'जब मैं थका होता हूँ, Simran क्या कहती है?',
+   o:['"कल कर लेना"','"मैं हूँ ना"','"पता था"','"सो जाओ"'], a:1},
+  {q:'Simran का नाम मेरे लिए क्या है?',
+   o:['एक नाम','मेरी सबसे आसान दुआ','एक contact','एक याद'], a:1},
+  {q:'हमारी सबसे अच्छी बात क्या है?',
+   o:['हम कभी नहीं लड़ते','लड़ने के बाद भी साथ रहते हैं','हम हमेशा बाहर जाते हैं','हम एक जैसे हैं'], a:1},
+  {q:'आज का दिन मेरे लिए क्यों ख़ास है?',
+   o:['छुट्टी है','क्योंकि आज Simran का जन्मदिन है','मौसम अच्छा है','कोई त्योहार है'], a:1}
+];
+var qIndex = 0, qScore = 0, quizDone = false;
+var qText = document.getElementById('qText'), qOpts = document.getElementById('qOpts'),
+    qNum = document.getElementById('qNum'), qScoreEl = document.getElementById('qScore'),
+    qBar = document.getElementById('qBar'), quizResult = document.getElementById('quizResult');
+
+function renderQuiz(){
+  if(qIndex >= QUIZ.length){
+    quizDone = true;
+    qText.textContent = 'Quiz पूरा! 💙';
+    qOpts.innerHTML = '';
+    qBar.style.width = '100%';
+    quizResult.classList.add('show');
+    quizResult.innerHTML = 'तुमने ' + qScore + '/' + QUIZ.length + ' सही किए — ' +
+      (qScore === QUIZ.length ? 'तुम मुझे मेरे से भी ज़्यादा जानती हो 🥹💙' : 'पर दिल से सब सही हैं 💙');
+    markSolved('quiz', 'Love Quiz पूरा! अगला game खुल गया 🎈');
+    return;
+  }
+  var item = QUIZ[qIndex];
+  qNum.textContent = qIndex + 1;
+  qScoreEl.textContent = qScore;
+  qBar.style.width = (qIndex/QUIZ.length*100) + '%';
+  qText.textContent = item.q;
+  qOpts.innerHTML = '';
+  var answered = false;
+  item.o.forEach(function(opt, i){
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'quiz-opt';
+    b.textContent = opt;
+    b.addEventListener('click', function(){
+      if(answered) return;
+      answered = true;
+      if(i === item.a){ b.classList.add('right'); qScore++; }
+      else { b.classList.add('wrong'); $$('.quiz-opt', qOpts)[item.a].classList.add('right'); }
+      qScoreEl.textContent = qScore;
+      setTimeout(function(){ qIndex++; renderQuiz(); }, 900);
+    });
+    qOpts.appendChild(b);
+  });
+}
+renderQuiz();
+
+/* ---------- GAME 2 : Balloon Pop ---------- */
+var POP_GOAL = 10, popTime = 40;
+var popScoreEl = document.getElementById('popScore'), popTimeEl = document.getElementById('popTime');
+var popArena = document.getElementById('popArena'), popResult = document.getElementById('popResult');
+var popStartBtn = document.getElementById('popStart');
+var popTimer = null, popSpawner = null, popCount = 0, popRunning = false;
+
+function resetPop(){
+  stopPop();
+  popArena.innerHTML = '<div class="hint">Balloons पर tap करके फोड़ो 💙</div>';
+  popCount = 0; popTime = 40;
+  popScoreEl.textContent = '0'; popTimeEl.textContent = '40';
+  popResult.classList.remove('show');
+  popStartBtn.disabled = false;
+  if(solved.pop) popStartBtn.disabled = true;
+}
+function stopPop(){
+  clearInterval(popTimer); popTimer = null;
+  clearInterval(popSpawner); popSpawner = null;
+  popRunning = false;
+  $$('.balloon-target', popArena).forEach(function(el){ el.remove(); });
+}
+function makeBalloon(){
+  var palette = ['#7fbcf0','#3f8ee0','#ff9dc0','#ffd166','#bfe0ff','#a9d3f7'];
+  var wrap = document.createElement('div');
+  wrap.className = 'balloon-target';
+  wrap.style.cssText = 'position:absolute;left:' + rnd(3,88) + '%;bottom:-100px;width:48px;height:62px;' +
+    'animation:riseArena ' + rnd(4.2,6.4).toFixed(2) + 's linear forwards;cursor:pointer;z-index:2';
+  var b = document.createElement('div');
+  b.style.cssText = 'position:relative;width:48px;height:62px;border-radius:50% 50% 46% 46%;' +
+    'box-shadow:inset -6px -8px 0 rgba(0,0,0,.06);background:' + pick(palette);
+  var str = document.createElement('div');
+  str.style.cssText = 'position:absolute;left:50%;top:100%;width:2px;height:40px;background:rgba(63,142,224,.4);transform:translateX(-50%)';
+  b.appendChild(str);
+  wrap.appendChild(b);
+
+  function pop(){
+    if(wrap.dataset.popped) return;
+    wrap.dataset.popped = '1';
+    var r = wrap.getBoundingClientRect(), ar = popArena.getBoundingClientRect();
+    burstAt(r.left - ar.left + 24, r.top - ar.top + 30, popArena, 5);
+    b.style.animation = 'balloonPop .42s ease-out forwards';
+    popCount++;
+    popScoreEl.textContent = popCount;
+    setTimeout(function(){ wrap.remove(); }, 460);
+    if(popCount >= POP_GOAL && popRunning) winPop();
+  }
+  wrap.addEventListener('click', pop);
+  wrap.addEventListener('touchstart', function(ev){ ev.preventDefault(); pop(); }, {passive:false});
+  wrap.addEventListener('animationend', function(ev){
+    if(ev.animationName === 'riseArena' && !wrap.dataset.popped) wrap.remove();
+  });
+  popArena.appendChild(wrap);
+}
+function winPop(){
+  popRunning = false;
+  stopPop();
+  popResult.classList.add('show');
+  popResult.textContent = '🎈 शाबाश! सारे 10 balloons फूट गए!';
+  markSolved('pop', 'Balloon Pop पूरा! अगला game खुल गया 💗');
+}
+function startPop(){
+  if(popRunning) return;
+  resetPop();
+  popRunning = true;
+  popStartBtn.disabled = true;
+  popArena.querySelector('.hint').textContent = 'जल्दी! Balloons ऊपर जा रहे हैं 💨';
+  popTime = 40; popTimeEl.textContent = popTime;
+  var spawned = 0;
+  popSpawner = setInterval(function(){
+    if(spawned >= POP_GOAL || !popRunning){ clearInterval(popSpawner); return; }
+    spawned++; makeBalloon();
+  }, 780);
+  makeBalloon(); spawned = 1;
+  popTimer = setInterval(function(){
+    popTime--; popTimeEl.textContent = popTime;
+    if(popTime <= 0){
+      stopPop();
+      popResult.classList.add('show');
+      popResult.textContent = 'समय ख़त्म! ' + popCount + '/10 balloons फूटे — फिर से try करो 💙';
+      popStartBtn.disabled = false;
+    }
+  }, 1000);
+}
+popStartBtn.addEventListener('click', startPop);
+
+/* ---------- GAME 3 : Heart Catch ---------- */
+var CATCH_GOAL = 12, catchTimeLeft = 30;
+var catchScoreEl = document.getElementById('catchScore'), catchTimeEl = document.getElementById('catchTime');
+var catchArena = document.getElementById('catchArena'), basket = document.getElementById('basket');
+var catchResult = document.getElementById('catchResult'), catchStartBtn = document.getElementById('catchStart');
+var catchRunning = false, catchScore = 0, catchRaf = null, catchHearts = [], catchTimer = null,
+    basketX = 0, catchSpawner = null, catchSpawned = 0, keyState = 0;
+
+function setBasket(x){
+  var max = catchArena.clientWidth - basket.clientWidth;
+  basketX = Math.max(0, Math.min(max, x));
+  basket.style.left = basketX + 'px';
+}
+function resetCatch(){
+  stopCatch();
+  catchHearts.forEach(function(h){ h.el.remove(); });
+  catchHearts = [];
+  catchScore = 0; catchScoreEl.textContent = '0';
+  catchTimeLeft = 30; catchTimeEl.textContent = '30';
+  catchResult.classList.remove('show');
+  catchStartBtn.disabled = solved.catch;
+  setBasket(catchArena.clientWidth/2 - 48);
+}
+function stopCatch(){
+  catchRunning = false;
+  if(catchRaf){ cancelAnimationFrame(catchRaf); catchRaf = null; }
+  clearInterval(catchTimer); catchTimer = null;
+  clearInterval(catchSpawner); catchSpawner = null;
+  catchHearts.forEach(function(h){ h.el.remove(); });
+  catchHearts = [];
+}
+function makeHeart(){
+  var el = document.createElement('div');
+  el.className = 'gheart';
+  el.textContent = pick(['💗','💙','❤️','💖','🤍']);
+  var x = rnd(6, 92);
+  el.style.left = x + '%';
+  el.style.top = '-40px';
+  catchArena.appendChild(el);
+  catchHearts.push({el:el, y:-40, vy:rnd(2.2,4.6), x:x});
+}
+function catchLoop(){
+  if(!catchRunning) return;
+  var H = catchArena.clientHeight;
+  var basketTop = H - 62, basketCx = basketX + basket.clientWidth/2;
+  if(keyState){ setBasket(basketX + keyState*7); }
+  for(var i=catchHearts.length-1;i>=0;i--){
+    var h = catchHearts[i];
+    h.y += h.vy;
+    h.el.style.top = h.y + 'px';
+    if(h.y > basketTop){
+      var hx = (h.x/100) * catchArena.clientWidth + 15;
+      if(Math.abs(hx - basketCx) < 58){
+        catchScore++; catchScoreEl.textContent = catchScore;
+        burstAt(basketX + basket.clientWidth/2, H - 70, catchArena, 3);
+        h.el.remove(); catchHearts.splice(i,1);
+        if(catchScore >= CATCH_GOAL){ winCatch(); return; }
+        continue;
+      }
+    }
+    if(h.y > H + 40){ h.el.remove(); catchHearts.splice(i,1); }
+  }
+  catchRaf = requestAnimationFrame(catchLoop);
+}
+function winCatch(){
+  stopCatch();
+  catchResult.classList.add('show');
+  catchResult.textContent = '💗 ' + CATCH_GOAL + ' दिल पकड़े! तुम्हारे दिल ने तो सब जीत लिया!';
+  markSolved('catch', 'Heart Catch पूरा! अगला game खुल गया ⭐');
+}
+function startCatch(){
+  if(catchRunning) return;
+  resetCatch();
+  catchRunning = true;
+  catchStartBtn.disabled = true;
+  catchScore = 0; catchScoreEl.textContent = '0';
+  catchTimeLeft = 30; catchTimeEl.textContent = catchTimeLeft;
+  catchSpawned = 0;
+  catchSpawner = setInterval(function(){
+    if(!catchRunning) return;
+    if(catchSpawned >= CATCH_GOAL + 10){ clearInterval(catchSpawner); return; }
+    catchSpawned++; makeHeart();
+  }, 620);
+  makeHeart(); catchSpawned = 1;
+  catchRaf = requestAnimationFrame(catchLoop);
+  catchTimer = setInterval(function(){
+    catchTimeLeft--; catchTimeEl.textContent = catchTimeLeft;
+    if(catchTimeLeft <= 0){
+      stopCatch();
+      catchResult.classList.add('show');
+      catchResult.textContent = 'समय ख़त्म! ' + catchScore + '/' + CATCH_GOAL + ' दिल — फिर से try करो 💙';
+      catchStartBtn.disabled = false;
+    }
+  }, 1000);
+}
+catchStartBtn.addEventListener('click', startCatch);
+catchArena.addEventListener('mousemove', function(ev){
+  var r = catchArena.getBoundingClientRect();
+  setBasket(ev.clientX - r.left - basket.clientWidth/2);
+});
+catchArena.addEventListener('touchmove', function(ev){
+  if(!ev.touches[0]) return;
+  var r = catchArena.getBoundingClientRect();
+  setBasket(ev.touches[0].clientX - r.left - basket.clientWidth/2);
+  ev.preventDefault();
+}, {passive:false});
+document.addEventListener('keydown', function(ev){
+  if(ev.key === 'ArrowLeft'){ keyState = -1; }
+  else if(ev.key === 'ArrowRight'){ keyState = 1; }
+  else return;
+  if(catchRunning) ev.preventDefault();
+});
+document.addEventListener('keyup', function(){ keyState = 0; });
+window.addEventListener('resize', function(){ setBasket(basketX); });
+setBasket(0);
+
+/* ---------- GAME 4 : Find the Hidden Hearts ---------- */
+var FIND_HEARTS = 5, FIND_COLS = 5, FIND_ROWS = 4, FIND_CELLS = FIND_COLS*FIND_ROWS;
+var hgrid = document.getElementById('hgrid'), findScoreEl = document.getElementById('findScore'),
+    findTapsEl = document.getElementById('findTaps'), findResult = document.getElementById('findResult');
+var findStartBtn = document.getElementById('findStart');
+var findHearts = {}, findFound = 0, findTaps = 0, findLive = false;
+
+function resetFind(){
+  hgrid.innerHTML = '';
+  findHearts = {}; findFound = 0; findTaps = 0; findLive = true;
+  findScoreEl.textContent = '0'; findTapsEl.textContent = '0';
+  findResult.classList.remove('show');
+  var pool = [];
+  for(var i=0;i<FIND_CELLS;i++) pool.push(i);
+  for(var j=0;j<FIND_HEARTS;j++){
+    var idx = (Math.random()*pool.length)|0;
+    findHearts[pool[idx]] = true;
+    pool.splice(idx,1);
+  }
+  for(var c=0;c<FIND_CELLS;c++){
+    (function(c){
+      var cell = document.createElement('button');
+      cell.type = 'button';
+      cell.className = 'hcell';
+      cell.setAttribute('aria-label', 'cell ' + (c+1));
+      cell.addEventListener('click', function(){
+        if(!findLive || cell.classList.contains('open')) return;
+        findTaps++; findTapsEl.textContent = findTaps;
+        cell.classList.add('open');
+        if(findHearts[c]){
+          cell.classList.add('heart');
+          cell.textContent = '💗';
+          findFound++; findScoreEl.textContent = findFound;
+          var r = cell.getBoundingClientRect(), gr = hgrid.getBoundingClientRect();
+          burstAt(r.left - gr.left + r.width/2, r.top - gr.top + r.height/2, hgrid, 5);
+          if(findFound >= FIND_HEARTS) winFind();
+        } else {
+          cell.textContent = pick(['🤍','⭐','💙','✨']);
+          cell.style.opacity = '.62';
+        }
+      });
+      hgrid.appendChild(cell);
+    })(c);
+  }
+}
+function winFind(){
+  findLive = false;
+  findResult.classList.add('show');
+  findResult.textContent = '⭐ सारे 5 दिल मिल गए! ' + findTaps + ' taps में — शाबाश Simran!';
+  markSolved('find', 'Hidden Hearts पूरा! चारों games जीत लिए 🎉');
+  nextBtn.textContent = 'आगे →';
+}
+findStartBtn.addEventListener('click', resetFind);
+resetFind();
+
+/* ============================================================
+   10. Gift boxes
+   ============================================================ */
+var GIFTS = [
+  {title:'💙 ख़ुशियों का Gift',
+   msg:'ये box तुम्हारी हँसी के नाम है। मेरी दुआ है कि तुम हर दिन ऐसे ही हँसो — बिना किसी वजह के भी। तुम्हारी हँसी ही मेरी सबसे बड़ी ख़ुशी है।'},
+  {title:'🤝 साथ का Gift',
+   msg:'ये gift वादा है — अच्छे दिनों में तुम्हारे साथ, और बुरे दिनों में तुम्हारे आगे खड़ा। तुम्हें कभी अकेला महसूस नहीं होने दूँगा।'},
+  {title:'🙏 दुआओं का Gift',
+   msg:'हर सुबह एक छोटी सी दुआ — कि तुम्हारी हर मेहनत रंग लाए, तुम्हारी हर इच्छा पूरी हो, और तुम्हारे आँसू कभी ज़्यादा न हों।'},
+  {title:'💍 आगे के सपनों का Gift',
+   msg:'ये box खाली है — क्योंकि इसमें हमारे बाक़ी सारे साल आने हैं। एक घर, एक-दूसरे का हाथ, और ढेर सारी चाय वाली शामें।'}
+];
+var giftWrap = document.getElementById('giftWrap');
+GIFTS.forEach(function(g, i){
+  var card = document.createElement('div');
+  card.className = 'gift';
+  card.innerHTML = '<div class="box" role="button" tabindex="0" aria-label="Gift खोलो"><span class="bow">🎀</span>' +
+                   '<span class="body"></span><span class="ribbon"></span><span class="lid"></span></div>' +
+                   '<h3 style="font-size:15.5px;color:#124a8c;margin-bottom:2px">' + g.title + '</h3>' +
+                   '<div class="msg"><b>' + g.title.replace(/^\S+\s/, '') + '</b>' + g.msg + '</div>';
+  var box = card.querySelector('.box');
+  function openBox(){
+    var wasOpen = card.classList.contains('open');
+    card.classList.toggle('open', !wasOpen);
+    if(!wasOpen){
+      var r = box.getBoundingClientRect(), cr = card.getBoundingClientRect();
+      burstAt(r.left - cr.left + r.width/2, r.top - cr.top + 20, card, 8);
+      heartRain(card, 6, ['💙','💗','⭐','🤍']);
+    }
+  }
+  box.addEventListener('click', openBox);
+  box.addEventListener('keydown', function(ev){ if(ev.key === 'Enter' || ev.key === ' ') openBox(); });
+  giftWrap.appendChild(card);
+});
+
+/* ============================================================
+   11. Our Journey — photo slots (photo1.jpg … photo4.jpg)
+   ============================================================ */
+$$('#page-journey .jphoto').forEach(function(ph, i){
+  var img = document.createElement('img');
+  img.src = 'photo' + (i+1) + '.jpg';
+  img.alt = 'Hamari yaad ' + (i+1);
+  img.loading = 'lazy';
+  img.onload = function(){ var p = ph.querySelector('.ph'); if(p) p.style.display = 'none'; };
+  img.onerror = function(){ img.remove(); };
+  ph.appendChild(img);
+});
+
+/* ============================================================
+   12. Teddy Bear Surprise
+   ============================================================ */
+var sbox = document.getElementById('sbox'), teddyA = document.getElementById('teddyA'),
+    teddyB = document.getElementById('teddyB'), bigLove = document.getElementById('bigLove'),
+    sHint = document.getElementById('sHint'), stageS = document.getElementById('stageS');
+var surpriseDone = false;
+
+sbox.addEventListener('click', function(){
+  if(surpriseDone) return;
+  surpriseDone = true;
+  sbox.classList.add('open');
+  setTimeout(function(){
+    sbox.classList.add('hide');
+    teddyA.classList.add('up');
+  }, 850);
+  setTimeout(function(){
+    teddyB.classList.add('up');
+  }, 1250);
+  setTimeout(function(){
+    teddyB.classList.add('lean');
+  }, 2100);
+  setTimeout(function(){
+    bigLove.classList.add('show');
+    heartRain(stageS, 30, ['💙','💗','💖','🤍','⭐','💙']);
+    confettiBurst(120);
+  }, 2500);
+  sHint.textContent = '🧸 दोनों teddy तुम्हारे लिए हैं — एक दिल लाया, दूसरा गले लगाने 💙';
+});
+
+/* ============================================================
+   13. A Promise for Forever
+   ============================================================ */
+var PROMISES = [
+  'मैं वादा करता हूँ कि हर सुबह पहले तुम्हारा चेहरा देखूँगा — बाक़ी दुनिया बाद में।',
+  'मैं तुम्हारी हर थकान की वजह नहीं, हर आराम की वजह बनूँगा।',
+  'जब तुम चुप होगी, मैं बिना सवाल किए तुम्हारा हाथ पकड़ लूँगा।',
+  'तुम्हारे हर सपने को अपना सपना मानूँगा, और उसे पूरा करने में कभी पीछे नहीं रहूँगा।',
+  'अगर झगड़ा होगा, तो पहले मैं प्यार से मान जाऊँगा — क्योंकि तुम्हारे साथ रहना हर जीत से बड़ा है।',
+  'मैं ज़िंदगी के हर मोड़ पर तुम्हारा हाथ थामे रहूँगा — बूढ़े होने तक, और उसके बाद भी।'
+];
+var pIdx = 0;
+var pheart = document.getElementById('pheart'), promiseBox = document.getElementById('promiseBox'),
+    pcount = document.getElementById('pcount'), pFinal = document.getElementById('pFinal'),
+    pstage = document.getElementById('pstage');
+
+pheart.addEventListener('click', function(ev){
+  if(pIdx >= PROMISES.length) return;
+  var r = pheart.getBoundingClientRect(), sr = pstage.getBoundingClientRect();
+  burstAt(r.left - sr.left + r.width/2, r.top - sr.top + r.height/2, pstage, 8);
+  promiseBox.classList.remove('show');
+  setTimeout(function(){
+    promiseBox.textContent = PROMISES[pIdx];
+    promiseBox.classList.add('show');
+    pIdx++;
+    pcount.textContent = pIdx + ' / ' + PROMISES.length;
+    if(pIdx >= PROMISES.length){
+      pFinal.classList.add('show');
+      confettiBurst(170);
+      heartRain(pstage, 26, ['💙','💗','🤍','⭐','💖']);
+    }
+  }, 220);
+});
+
+/* ============================================================
+   14. Final page buttons
+   ============================================================ */
+document.getElementById('finalBurst').addEventListener('click', function(){
+  balloonBlast(18);
+  setTimeout(function(){ confettiBurst(200); }, 800);
+  heartRain(null, 20, ['💙','💗','🤍','⭐']);
+});
+document.getElementById('finalHome').addEventListener('click', function(){ go(0); });
+
+/* first-run nudge */
+setTimeout(function(){ toast('Simran, तुम्हारे लिए एक surprise तैयार है 💙'); }, 1200);
+if(TEST) toast('TEST MODE: countdown 5 सेकंड में ख़त्म होगा');
+
+})();
+</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
